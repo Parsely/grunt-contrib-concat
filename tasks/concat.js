@@ -73,7 +73,7 @@ module.exports = function(grunt) {
       var src = banner + f.src.filter(function(filepath) {
         // Warn on and remove invalid source files (if nonull was set).
         if (!grunt.file.exists(filepath)) {
-          grunt.log.warn('Source file "' + filepath + '" not found.');
+          grunt.fail.fatal('Source file "' + filepath + '" not found.');
           return false;
         }
         return true;
